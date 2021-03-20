@@ -1,0 +1,67 @@
+---
+# Configured in YAML cause someday soon I will only know how to write YAML...
+defaultContentLanguage: "en"
+languageCode: "en-us"
+title: "Voltage Noir"
+copyright: '<a href="http://www.apache.org/licenses/LICENSE-2.0.txt" target="_blank" rel="noopener">© 2021 Paul Hirsch</a>'
+baseurl: "/"
+#theme: "terminal"
+theme: "hello-friend-ng"
+paginate: 100
+
+# Self-own mode: On
+enableEmoji: true
+
+enableGitInfo: true
+enableRobotsTXT: true
+enableRSS: false
+
+author: "Paul Doom"
+
+params:
+  ## Hello Friend params...
+  # Subtitle for home
+  homeSubtitle: "Back from the dead, like that E.T. fellow..."
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts: false
+
+  # Metadata mostly used in document's head
+  description: "Official home of Voltage Noir"
+  keywords: "homepage, blog"
+  defaultTheme: "dark"
+
+  logo:
+    logoText: " cd ~vn"
+    logoHomeLink: "/"
+    #path:
+    #alt:
+
+permalinks:
+  posts: /:year/:month/:title/
+
+sitemap:
+  changefreq            : "daily"
+  priority              : 1
+  filename              : "sitemap.xml"
+
+taxonomies:
+  category: "categories"
+  tag: "tags"
+  series: "series"
+
+languages:
+  en:
+    languageName: "English"
+    title: "VN"
+    subtitle: "New old garbage 2000"
+    keywords: ""
+
+    menu:
+      main:
+        - identifier: "posts"
+          name: "Posts"
+          url: "/posts"
+        - identifier: "about"
+          name: "About"
+          url: "/about"
