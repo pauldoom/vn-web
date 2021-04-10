@@ -12,7 +12,8 @@ paginate: 100
 # Self-own mode: On
 enableEmoji: true
 
-enableGitInfo: true
+# git is not included in our build image so turning this off
+#enableGitInfo: true
 enableRobotsTXT: true
 enableRSS: false
 
