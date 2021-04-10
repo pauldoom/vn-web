@@ -37,8 +37,8 @@ sync:
   image: quay.io/coreos/awscli
   script:
     - aws s3 sync public s3://${S3_BUCKET} \
-        --follow-symlinks --no-paginate --output json \
-        --endpoint https://${S3_ENDPOINT}
+        --no-paginate --output json \
+        --endpoint=https://${S3_ENDPOINT}
   needs:
     - job: render
       artifacts: true
