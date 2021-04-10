@@ -1,15 +1,29 @@
-image: registry.gitlab.com/pages/hugo/hugo:latest
+default:
+  image: registry.gitlab.com/pages/hugo/hugo:latest
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
+  # Remianing items should be defined in project variables
+  #AWS_ACCESS_KEY_ID:
+  #AWS_SECRET_ACCESS_KEY:
+  #S3_ENDPOINT:
+  #S3_BUCKET:
+
+
+stages:
+  - test
+  - render
+  - sync
 
 test:
+  stage: test
   script:
   - hugo
   except:
   - main
 
-pages:
+render:
+  stage: render
   script:
   - hugo
   artifacts:
@@ -17,3 +31,15 @@ pages:
     - public
   only:
   - main
+
+sync:
+  stage: sync
+  image: quay.io/coreos/awscli
+  script:
+    - aws s3 sync public s3://${S3_BUCKET} \
+        --follow-symlinks --no-paginate --output json \
+        --endpoint https://${S3_ENDPOINT}
+  needs:
+    - job: render
+      artifacts: true
+
