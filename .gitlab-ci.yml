@@ -34,10 +34,10 @@ render:
 
 sync:
   stage: sync
-  image: quay.io/coreos/awscli
+  image: amazon/aws-cli:latest
   script:
     - aws s3 sync public s3://${S3_BUCKET} \
-        --no-paginate --output json \
+        --no-paginate --output=json \
         --endpoint=https://${S3_ENDPOINT}
   needs:
     - job: render
