@@ -37,7 +37,7 @@ sync:
   stage: sync
   image: amazon/aws-cli:latest
   script:
-    - aws s3 sync public s3://$S3_BUCKET --no-paginate --output=json --endpoint=https://$S3_ENDPOINT
+    - aws s3 sync public s3://$S3_BUCKET --acl=public-read --no-paginate --output=json --endpoint=https://$S3_ENDPOINT
   needs:
     - job: render
       artifacts: true
