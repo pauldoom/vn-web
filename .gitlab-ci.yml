@@ -3,11 +3,12 @@ default:
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
+
   # Remianing items should be defined in project variables
-  #AWS_ACCESS_KEY_ID:
-  #AWS_SECRET_ACCESS_KEY:
-  #S3_ENDPOINT:
-  #S3_BUCKET:
+  AWS_ACCESS_KEY_ID: setme
+  AWS_SECRET_ACCESS_KEY: setme
+  S3_ENDPOINT: setme
+  S3_BUCKET: setme
 
 
 stages:
@@ -36,7 +37,7 @@ sync:
   stage: sync
   image: amazon/aws-cli:latest
   script:
-    - aws s3 sync public s3://${S3_BUCKET} --no-paginate --output=json --endpoint=https://${S3_ENDPOINT}
+    - aws s3 sync public s3://$S3_BUCKET --no-paginate --output=json --endpoint=https://$S3_ENDPOINT
   needs:
     - job: render
       artifacts: true
