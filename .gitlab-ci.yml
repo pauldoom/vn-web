@@ -38,6 +38,7 @@ sync:
   image: amazon/aws-cli:latest
   script:
     - aws s3 sync public s3://$S3_BUCKET --acl=public-read --no-paginate --output=json --endpoint=https://$S3_ENDPOINT
+    - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
   needs:
     - job: render
       artifacts: true
