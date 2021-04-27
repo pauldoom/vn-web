@@ -9,15 +9,7 @@ baseurl: "/"
 # 10% Inspiration / 90% choosing a theme.
 theme: beautifulhugo
 
-paginate: 100
-
-# Self-own mode: On
-enableEmoji: false
-
-# git is not included in our build image so turning this off
-#enableGitInfo: true
 enableRobotsTXT: true
-enableRSS: false
 
 author: "Paul Doom"
 
@@ -49,3 +41,4 @@ languages:
         - identifier: "about"
           name: "About"
           url: "/about"
+
