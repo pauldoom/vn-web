@@ -45,7 +45,7 @@ fulfilling the first requirement of any project I work on: _Needless Complexity_
 
 ## Get bored
 
-I wrote an about page.  It stinks.   Not even half interested in finishing
+I wrote an [about](/about/) page.  It stinks.   Not even half interested in finishing
 this post.
 
 ## Critical Decisions Part Two
@@ -68,18 +68,27 @@ Despite the saccharine name, [Hello Friend NG](https://themes.gohugo.io/hugo-the
 
 ## Deploy to DigitalOcean Spaces
 
-Simply copy the `public/` directory up to a space, setup CDN and a DNS CNAME,
-and alakazam!  It's there!
+I simply copied the `public/` directory up to a space, setup CDN and a DNS CNAME with
+a few clicks, and alakazam!  It was online!  Oh... but broken?
 
-Then notice that spaces does not serve `index.html` as the default for
-a directory and get mad and file a support ticket and get told that
-you could use their PaaS service instead.
+Spaces does not serve `index.html` as the default for
+a directory.  After exhausting all other options, I relented and
+opened my usual "I already have an answer and it is that your product
+does not meet my need.  I am very very disappointed in you."
 
-I didn't want to run anything.  It's static files.
+DO support replied with a courteous and utterly useless response about
+how I could use their PaaS service instead.  Typical.  As a customer, I
+want choices.  I want so many choices I don't have to be expected to
+ever complete a task cause I am so busy pondering all the choices.
+
+I didn't want to run anything.  It is a static site.  No servers!*
+
+(*This is actually just being cheap.  I would spend 1000 hours to
+avoid $10/mo.  It makes sense.  Really.  Business.)
 
 ## OK, Deploy to AWS
 
-Setting up a static site on AWS is easy!  You simply:
+Off to the land of choice.  Setting up a static site on AWS is easy!  You simply:
 
 * Create a S3 bucket that does not allow public sharing
 * Create an OAI (origin access identity) and give it read access to the bucket
@@ -100,7 +109,7 @@ Setting up a static site on AWS is easy!  You simply:
 * Reconfigure CloudFront to use the Lambda
 * Oh, and you did set up logging destinations for all of the above, right?
 
-The power of AWS is knowing that after sufficent suffering, you WILL get something working.
+The power of AWS is knowing that after sufficient suffering, you WILL get something working.
 You may not be able to explain it to anyone, and if you are not careful it may cost a car payment
 every month, but you will get something working.
 
@@ -108,16 +117,21 @@ Also, I did all of this in Terraform cause I am not going to remember all those 
 I am a civilized human who uses Infrastructure as Code to make my life... _uh... better?
 Not exactly... Easier?  Ha, no..._  intellectually stimulating.
 
-Check it out here: <https://github.com/pauldoom/vn-infra>
+Check it out here: <https://github.com/pauldoom/vn-infra>  It includes 
+two stacks:
 
-## Step 10 - Themes Again
+* `account` - AWS account wide resources, like the S3 buckets for logs,
+  Terraform state, and also the root Route53 hosted DNS zone
+* `web` - Static hosting site using S3, CloudFront, and Lambda@Edge
+
+## Themes... Again
 
 I changed my mind and switched to [Beautiful Hugo](https://github.com/halogenica/beautifulhugo)
 cause it is more tasteful and I want to pretend to be sophisticated.
 
 Maybe I will try to modify it later and break it horribly, then maintain
 a broken fork for a few years.
-## Step 11 - CI/CD
+## CI/CD
 
 Clearly a site no one reads deserves a full featured CI/CD system, and
 needless to say, you would not use some commoner off the shelf solution
@@ -140,6 +154,7 @@ In the end, was it worth it?
 Nope.  I could have used a billion other tools to publish this "content".
 
 The journey on the other hand, well... OK, that was not quite worth
-it either.  Should have written an app or something.   This static
+it either.  I should have written an app or something.   This static
 site is just files in an object store... that I pay for every month.
 
+See you next time!
