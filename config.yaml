@@ -37,8 +37,8 @@ languages:
       main:
         - identifier: "posts"
           name: "Posts"
-          url: "/posts"
+          url: "/posts/"
         - identifier: "about"
           name: "About"
-          url: "/about"
+          url: "/about/"
 

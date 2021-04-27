@@ -1,7 +1,7 @@
 ---
 title: "Building A Stupid Hugo Site"
 author: "Paul Doom"
-date: "2020-05-15"
+date: "2021-04-25"
 ---
 It is amazing what can be done with a modern static web site.   With the right
 tools and a little work, you can create an online presence and serve it up
