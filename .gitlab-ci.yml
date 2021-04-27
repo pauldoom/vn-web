@@ -42,4 +42,6 @@ sync:
   needs:
     - job: render
       artifacts: true
+  only:
+  - main
 

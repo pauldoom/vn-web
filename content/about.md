@@ -3,7 +3,6 @@ title: "Why Is This Here?"
 date: "2020-05-15"
 author: "Paul Doom"
 ---
-
 ## History
 
 In 1996 the first version of [Voltage Noir](https://web.archive.org/web/19970522133019/http://www.msoe.edu:80/~hirschp/) went live.  It featured a few notes
