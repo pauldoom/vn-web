@@ -3,6 +3,7 @@ default:
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
+  SUBFOLDER="/public"
 
   # Remianing items should be defined in project variables
   AWS_ACCESS_KEY_ID: setme
@@ -37,7 +38,7 @@ sync:
   stage: sync
   image: amazon/aws-cli:latest
   script:
-    - aws s3 sync public s3://$S3_BUCKET --acl=public-read --no-paginate --output=json --endpoint=https://$S3_ENDPOINT
+    - aws s3 sync public s3://$S3_BUCKET/$SUBFOLDER --acl=public-read --no-paginate --output=json --endpoint=https://$S3_ENDPOINT
     - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
   needs:
     - job: render
