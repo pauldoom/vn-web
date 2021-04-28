@@ -3,7 +3,9 @@ default:
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
-  SUBFOLDER: /public
+  # Don't add a leading / here unless you want a key named "/" with
+  # a subkey named "/public"...
+  SUBFOLDER: public
 
   # Remianing items should be defined in project variables
   AWS_ACCESS_KEY_ID: setme
