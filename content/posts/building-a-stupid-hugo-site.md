@@ -96,7 +96,8 @@ a bit about **business**.)
 
 Off to the land of choice and freedom.  Setting up a static site on AWS is easy!  You simply:
 
-* Create a private S3 bucket
+* Create a private S3 bucket in a region other than `us-east-1` (EVERYONE uses `us-east-1` making it
+  the least cool region)
 * Create an OAI (origin access identity) and give it read access to the bucket
 * Create an ACM certificate
 * No, first create a DNS record to validate domain ownership....
@@ -126,7 +127,7 @@ Also, I did all of this in Terraform.  I don't write steps.  I declare the world
 I am a civilized human who uses Infrastructure as Code to make my life... *uh... better? Not exactly... Easier?  Ha, no...*
 To make my life **intellectually stimulating**.
 
-Check it out the code here: <https://github.com/pauldoom/vn-infra>  It includes 
+Check out the code here: <https://github.com/pauldoom/vn-infra>  It includes 
 two stacks:
 
 * `account` - AWS account wide resources, like the S3 buckets for logs,
