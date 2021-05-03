@@ -1,0 +1,7 @@
+<script language="javascript">
+var d = new Date();
+// Expire in 1 minute
+d.setTime(d.getTime() + (60*1000));
+var expires = "expires="+ d.toUTCString();
+document.cookie = "Voltage=Noir;" + expires + ";path=/";
+</script>
