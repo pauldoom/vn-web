@@ -49,7 +49,7 @@ sync:
   stage: sync
   image: amazon/aws-cli:2.1.39
   script:
-    - aws s3 sync public s3://$S3_BUCKET/$SUBFOLDER --acl=public-read --no-paginate --output=json --endpoint=https://$S3_ENDPOINT
+    - aws s3 --debug sync public s3://$S3_BUCKET/$SUBFOLDER --acl=public-read --no-paginate --output=json
     - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
   needs:
     - job: render
