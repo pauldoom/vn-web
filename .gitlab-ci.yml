@@ -26,14 +26,14 @@ hugo_test:
   except:
   - main
 
-browser_test:
-  stage: test
-  image: buildkite/puppeteer
-  before_script:
-    # Start local hugo instance
-    FIGURE OUT THIS PART - CAN BEFORE USE ANOTHER IMAGE?   HOW WILL THEY TALK?
-    - hugo server
-  script:
+# browser_test:
+#   stage: test
+#   image: buildkite/puppeteer
+#   before_script:
+#     # Start local hugo instance
+#     FIGURE OUT THIS PART - CAN BEFORE USE ANOTHER IMAGE?   HOW WILL THEY TALK?
+#     - hugo server
+#   script:
 
 render:
   stage: render
