@@ -3,7 +3,7 @@ title: "Building A Stupid Hugo Site"
 author: "Paul Doom"
 date: "2021-04-28"
 ---
-![Hugo](/images/hugo-logo-wide.svg)
+![Hugo](/images/hugo-logo.png)
 
 It is astounding what can be done with a modern static web site.   With the right
 tools and a little work, you can create an online presence and serve it up
