@@ -32,8 +32,8 @@ Of course I am speaking about choosing which free theme to use.
 
 I chose [Terminal](https://github.com/panr/hugo-theme-terminal) cause
 it has a certain spartan old school savoir faire.  Also it upper cases
-everything.  I am extremely loud IRL so it accurately reflects what is
-is like for me to talk to/at you.
+everything.  I am extremely loud IRL so it accurately reflects what it's
+like for me to talk to/at you.
 
 ## RTFM
 
